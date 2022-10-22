@@ -48,6 +48,7 @@ struct HW2ContentView: View {
 struct HW2CardView: View {
     let card: HW2MemoryGame<String>.HW2Card
 
+    // Not quite sure this is meant to be like this?
     var body: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20.0)

@@ -48,17 +48,18 @@ struct HW2ContentView: View {
 struct HW2CardView: View {
     let card: HW2MemoryGame<String>.HW2Card
 
-    // Not quite sure this is meant to be like this?
+    /// Not quite sure this is meant to be like this?
+    // Not quite sure what you mean by this?
     var body: some View {
         ZStack {
             let shape = RoundedRectangle(cornerRadius: 20.0)
-            if card.isFaceUp {
+            if card.orientation == .up {
                 shape.fill().foregroundColor(.white)
                 shape.strokeBorder(lineWidth: 3)
                 Text(card.content)
                     .font(.largeTitle)
                     .frame(height: 100)
-            } else if card.isMatched {
+            } else if card.isMatched == .matched {
                 shape.opacity(0)
             } else {
                 shape.fill()
